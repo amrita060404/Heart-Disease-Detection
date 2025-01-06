@@ -1,1 +1,1 @@
-# Heart-Disease-Deetection
+# Heart-Disease-Detection
