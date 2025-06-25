@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Results - Heart Disease Risk Assessment</title>
+    <link rel="stylesheet" href="static/result.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="static/images/heart.png" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <span>HeartCheck</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/assessment" class="nav-button">Take the Test</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="result-container">
+        {% if error %}
+            <div class="result-header">
+                <h1>Error</h1>
+                <div class="error-message">{{ error }}</div>
+                <a href="/" class="back-button">Try Again</a>
+            </div>
+        {% else %}
+            <div class="result-header">
+                <h1>Risk Assessment Results</h1>
+            </div>
+            
+            <div class="result-card {{ 'high-risk' if risk_level == 'high' else 'medium-risk' if risk_level == 'medium' else 'low-risk' }}">
+                <div class="result-icon">
+                    {% if risk_level == 'high' %}
+                        <i class="fas fa-heartbeat"></i>
+                    {% elif risk_level == 'medium' %}
+                        <i class="fas fa-heart"></i>
+                    {% else %}
+                        <i class="fas fa-heart"></i>
+                    {% endif %}
+                </div>
+                <div class="result-content">
+                    <h2>Your heart disease risk is: {{ risk_level|upper }}</h2>
+                    <div class="probability">
+                        Probability: {{ probability }}%
+                    </div>
+                    
+                    {% if prediction == 1 %}
+                        <p class="interpretation">
+                            The model predicts you may be at risk for heart disease. Please consult with a healthcare professional for a comprehensive evaluation.
+                        </p>
+                    {% else %}
+                        <p class="interpretation">
+                            The model predicts you are not at significant risk for heart disease. Maintain healthy habits and regular check-ups.
+                        </p>
+                    {% endif %}
+                </div>
+            </div>
+            
+            {% if top_features %}
+                <div class="feature-importance">
+                    <h3>Top Contributing Factors:</h3>
+                    <ol>
+                        {% for feature, importance in top_features %}
+                            <li>{{ feature }} ({{ "%.2f"|format(importance*100) }}%)</li>
+                        {% endfor %}
+                    </ol>
+                </div>
+            {% endif %}
+            
+            <div class="recommendations">
+                <h3>Recommendations:</h3>
+                {% if risk_level == 'high' %}
+                    <p>Please consult with a healthcare professional immediately for a comprehensive evaluation and potential treatment options.</p>
+                    <p>Consider lifestyle changes including diet modification, regular exercise, and stress management techniques.</p>
+                {% elif risk_level == 'medium' %}
+                    <p>Consider scheduling a check-up with your doctor to discuss preventive measures.</p>
+                    <p>Focus on maintaining a healthy lifestyle with balanced nutrition and regular physical activity.</p>
+                {% else %}
+                    <p>Continue with healthy habits including regular exercise, balanced diet, and routine health check-ups.</p>
+                    <p>Monitor your health indicators regularly to maintain your low risk status.</p>
+                {% endif %}
+            </div>
+            
+            <a href="/" class="back-button">Return to Home</a>
+            <a href="/assessment" class="back-button">Assess Again</a>
+        {% endif %}
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p>© 2025 Amrita Yadav. All rights reserved.</p>
+            <p class="disclaimer">Disclaimer: This tool provides risk prediction only and is not a substitute for professional medical advice.</p>
+        </div>
+    </footer>
+
+    <script src="static/heart-animation.js"></script>
+</body>
+</html>

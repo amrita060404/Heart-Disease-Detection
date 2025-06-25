@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heart Health Checker | Calculate Your Heart Disease Risk</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="static/images/heart.png" type="image/x-icon">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/#about">About Heart Disease</a></li>
+                <li><a href="/#how-it-works">How It Works</a></li>
+                <li><a href="/assessment" class="nav-button">Take the Test</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Biological Heart -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Know Your Heart Health</h1>
+            <p class="tagline">Assess your risk of heart disease with our advanced predictive model</p>
+            <a href="/assessment" class="cta-button">Check Your Risk Now</a>
+        </div>
+        <div class="heart-animation">
+            <div class="heart-outer-glow"></div>
+            <div class="heart-middle-ring"></div>
+            <div class="heart-platform"></div>
+            <img src="{{ url_for('static', filename='images/heart-biological.png') }}" alt="Biological Heart" class="biological-heart">
+        </div>
+    </section>
+
+    <!-- Heart Disease Information Section -->
+    <section class="info-section" id="about">
+        <div class="section-container">
+            <h2>Understanding Heart Disease</h2>
+            <p>Heart disease refers to various conditions affecting your heart. Our model assesses your risk based on the UCLA dataset classification:</p>
+            
+            <div class="risk-carousel">
+                <button class="carousel-button prev" aria-label="Previous card">&lt;</button>
+                <div class="risk-cards-container">
+                    <div class="risk-cards">
+                        <!-- Cards will be duplicated by JavaScript for infinite effect -->
+                    </div>
+                </div>
+                <button class="carousel-button next" aria-label="Next card">&gt;</button>
+            </div>
+            
+            <a href="/assessment" class="cta-button secondary">Assess Your Risk Level</a>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="section-container">
+            <h2>How Our Model Works</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <i class="fas fa-brain"></i>
+                    <h3>Machine Learning</h3>
+                    <p>Our model uses advanced algorithms trained on the UCLA Heart Disease dataset</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-heartbeat"></i>
+                    <h3>13 Key Factors</h3>
+                    <p>Analyzes age, cholesterol, blood pressure, and other critical health markers</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-chart-line"></i>
+                    <h3>Accurate Predictions</h3>
+                    <p>Provides probability-based risk assessment with contributing factors</p>
+                </div>
+            </div>
+            
+            <div class="technical-details">
+                <h3>Model Details</h3>
+                <p>The model considers these key features from your health profile:</p>
+                <ul>
+                    <li>Age, Sex</li>
+                    <li>Chest pain type</li>
+                    <li>Resting blood pressure</li>
+                    <li>Serum cholesterol</li>
+                    <li>Fasting blood sugar</li>
+                    <li>Resting ECG results</li>
+                    <li>Maximum heart rate</li>
+                    <li>Exercise induced angina</li>
+                    <li>ST depression</li>
+                    <li>Slope of peak exercise</li>
+                    <li>Number of major vessels</li>
+                    <li>Thalassemia</li>
+                </ul>
+            </div>
+            
+            <a href="/assessment" class="cta-button">Start Your Assessment</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p>© 2025 Amrita Yadav. All rights reserved.</p>
+            <p class="disclaimer">Disclaimer: This tool provides risk prediction only and is not a substitute for professional medical advice.</p>
+        </div>
+    </footer>
+
+    <script src="static/heart-animation.js"></script>
+</body>
+</html>

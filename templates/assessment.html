@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Heart Disease Risk Assessment</title>
+    <link rel="stylesheet" href="static/assessment.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="icon" href="static/images/heart.png" type="image/x-icon">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-heartbeat"></i>
+                <span>HeartCheck</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="/">Home</a></li>
+                <li><a href="/assessment" class="nav-button">Take the Test</a></li>
+            </ul>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <div class="assessment-container">
+        <h1>Heart Disease Risk Assessment</h1>
+        <p class="disclaimer">
+            Note: This tool provides a risk prediction based on machine learning models. 
+            It is not a substitute for professional medical advice.
+        </p>
+        
+        <form method="POST">
+            <h2>Personal Information</h2>
+            <div class="form-group">
+                <label for="age">Age:</label>
+                <input type="number" id="age" name="age" required min="20" max="100">
+            </div>
+            
+            <div class="form-group">
+                <label for="sex">Sex:</label>
+                <select id="sex" name="sex" required>
+                    <option value="0">Female</option>
+                    <option value="1">Male</option>
+                </select>
+            </div>
+            
+            <h2>Medical Information</h2>
+            <div class="form-group">
+                <label for="cp">Chest Pain Type:</label>
+                <select id="cp" name="cp" required>
+                    <option value="1">Typical angina</option>
+                    <option value="2">Atypical angina</option>
+                    <option value="3">Non-anginal pain</option>
+                    <option value="4">Asymptomatic</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="trestbps">Resting Blood Pressure (mm Hg):</label>
+                <input type="number" id="trestbps" name="trestbps" required min="80" max="200">
+            </div>
+            
+            <div class="form-group">
+                <label for="chol">Serum Cholesterol (mg/dl):</label>
+                <input type="number" id="chol" name="chol" required min="100" max="600">
+            </div>
+            
+            <div class="form-group">
+                <label for="fbs">Fasting Blood Sugar > 120 mg/dl:</label>
+                <select id="fbs" name="fbs" required>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="restecg">Resting ECG Results:</label>
+                <select id="restecg" name="restecg" required>
+                    <option value="0">Normal</option>
+                    <option value="1">ST-T wave abnormality</option>
+                    <option value="2">Left ventricular hypertrophy</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="thalach">Maximum Heart Rate Achieved:</label>
+                <input type="number" id="thalach" name="thalach" required min="60" max="220">
+            </div>
+            
+            <div class="form-group">
+                <label for="exang">Exercise Induced Angina:</label>
+                <select id="exang" name="exang" required>
+                    <option value="0">No</option>
+                    <option value="1">Yes</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="oldpeak">ST Depression Induced by Exercise:</label>
+                <input type="number" id="oldpeak" name="oldpeak" step="0.1" required min="0" max="6.2">
+            </div>
+            
+            <div class="form-group">
+                <label for="slope">Slope of Peak Exercise ST Segment:</label>
+                <select id="slope" name="slope" required>
+                    <option value="1">Upsloping</option>
+                    <option value="2">Flat</option>
+                    <option value="3">Downsloping</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="ca">Number of Major Vessels Colored by Fluoroscopy (0-3):</label>
+                <input type="number" id="ca" name="ca" required min="0" max="3">
+            </div>
+            
+            <div class="form-group">
+                <label for="thal">Thalassemia:</label>
+                <select id="thal" name="thal" required>
+                    <option value="3">Normal</option>
+                    <option value="6">Fixed defect</option>
+                    <option value="7">Reversible defect</option>
+                </select>
+            </div>
+            
+            <button type="submit">Assess Risk</button>
+        </form>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p>© 2025 Amrita Yadav. All rights reserved.</p>
+            <p class="disclaimer">Disclaimer: This tool provides risk prediction only and is not a substitute for professional medical advice.</p>
+        </div>
+    </footer>
+
+    <script src="static/heart-animation.js"></script>
+</body>
+</html>

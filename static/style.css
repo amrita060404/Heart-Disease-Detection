@@ -1,0 +1,678 @@
+/* Global Styles */
+:root {
+    /* Updated color palette */
+    --primary-red: #8E1616;        /* Rich burgundy red */
+    --primary-dark: #6A0D0D;       /* Darker wine red */
+    --primary-light: #D2665A;      /* Soft coral red */
+    --secondary-color: #FFEADD;    /* Warm cream */
+    --dark-color: #464545;         /* Soft dark gray */
+    --light-color: #FFF9F6;        /* Slightly off-white */
+    --gray-color: #A8A6A6;         /* Light gray for secondary text */
+    --nav-height: 80px;            /* Slightly taller navbar */
+}
+
+/* Reset default styles for all elements */
+* {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    box-sizing: border-box; /* Include padding/border in element's width/height */
+}
+
+/* Base styles for the body */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font stack */
+    line-height: 1.6; /* Comfortable line spacing */
+    color: var(--dark-color); /* Text color */
+    background-color: #FF7777; /* Light red background */
+}
+
+/* Ensure footer stays at bottom */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex: 1;
+}
+
+/* Heading styles */
+h1, h2, h3, h4 {
+    color: var(--dark-color); /* Dark text color */
+    margin-bottom: 1rem; /* Space below headings */
+}
+
+/* Paragraph styles */
+p {
+    margin-bottom: 1rem; /* Space below paragraphs */
+    color: var(--dark-color); /* Text color */
+}
+
+/* Anchor/link styles */
+a {
+    text-decoration: none; /* Remove underline */
+    color: var(--primary-red); /* Red color for links */
+}
+
+/* Navigation Bar */
+.navbar {
+    position: absolute; /* Position relative to nearest positioned ancestor */
+    top: 0; /* Stick to top */
+    left: 0; /* Align left */
+    width: 100%; /* Full width */
+    background-color: rgba(245, 94, 94, 0.88); /* Red background */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Subtle shadow */
+    z-index: 1000; /* Ensure navbar stays on top */
+    height: var(--nav-height); /* Use predefined height */
+}
+
+/* Container for nav elements */
+.nav-container {
+    display: flex; /* Flex layout */
+    justify-content: space-between; /* Space between logo and links */
+    align-items: center; /* Vertically center items */
+    padding: 0 5%; /* Horizontal padding */
+    height: 100%; /* Full height of navbar */
+    max-width: 1200px; /* Maximum width */
+    margin: 0 auto; /* Center horizontally */
+}
+
+/* Logo styling */
+.logo {
+    display: flex; /* Flex layout */
+    align-items: center; /* Center vertically */
+    font-size: 1.5rem; /* Logo size */
+    font-weight: bold; /* Bold text */
+    color: var(--primary-red); /* Red color */
+}
+
+/* Icon in logo */
+.logo i {
+    margin-right: 10px; /* Space between icon and text */
+    font-size: 1.8rem; /* Icon size */
+}
+
+/* Navigation links container */
+.nav-links {
+    display: flex; /* Flex layout */
+    list-style: none; /* Remove bullets */
+}
+
+/* Individual nav items */
+.nav-links li {
+    margin-left: 30px; /* Space between items */
+}
+
+/* Nav link styles */
+.nav-links a {
+    color: var(--dark-color); /* Dark text */
+    font-weight: 600; /* Semi-bold */
+    transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Nav link hover effect */
+.nav-links a:hover {
+    color: var(--primary-red); /* Red on hover */
+}
+
+/* Special button in nav */
+.nav-button {
+    background-color: var(--primary-red); /* Red background */
+    color: #FFEADD !important; /* Cream text (important to override) */
+    padding: 8px 20px; /* Padding */
+    border-radius: 50px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth transitions */
+}
+
+/* Nav button hover effect */
+.nav-button:hover {
+    background-color: var(--primary-dark); /* Darker red */
+    transform: translateY(-2px); /* Lift effect */
+    box-shadow: 0 4px 8px rgba(255, 0, 0, 0.3); /* Shadow */
+}
+
+/* Mobile menu toggle button */
+.hamburger {
+    display: none; /* Hidden by default (shown on mobile) */
+    font-size: 1.5rem; /* Icon size */
+    cursor: pointer; /* Pointer cursor */
+    color: var(--primary-red); /* Red color */
+}
+
+/* Button Styles */
+.cta-button {
+    display: inline-block; /* Inline but with dimensions */
+    background-color: var(--primary-red); /* Red background */
+    color: #FFEADD; /* Cream text */
+    padding: 12px 30px; /* Padding */
+    border-radius: 50px; /* Rounded corners */
+    font-weight: bold; /* Bold text */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 1px; /* Space between letters */
+    transition: all 0.3s ease; /* Smooth transitions */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor */
+    margin: 20px 0; /* Vertical margin */
+    box-shadow: 0 4px 15px rgba(255, 0, 0, 0.3); /* Shadow */
+}
+
+/* Button hover effect */
+.cta-button:hover {
+    background-color: var(--primary-dark); /* Darker red */
+    transform: translateY(-2px); /* Lift effect */
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4); /* Larger shadow */
+}
+
+/* Secondary button variant */
+.cta-button.secondary {
+    background-color: #FFEADD; /* Cream background */
+    color: var(--primary-red); /* Red text */
+    border: 2px solid var(--primary-red); /* Red border */
+}
+
+/* Secondary button hover */
+.cta-button.secondary:hover {
+    background-color: var(--primary-red); /* Red background */
+    color: #FFEADD; /* Cream text */
+}
+
+/* Section Container */
+.section-container {
+    max-width: 1200px; /* Maximum width */
+    margin: 0 auto; /* Center horizontally */
+    padding: 80px 20px; /* Padding */
+    text-align: center; /* Center text */
+}
+
+/* Hero Section */
+.hero {
+    display: flex; /* Flex layout */
+    align-items: center; /* Center vertically */
+    justify-content: space-between; /* Space between content and heart */
+    padding: 80px 10%; /* Padding */
+    min-height: 100vh; /* Full viewport height */
+    background: linear-gradient(135deg, #FFEADD 0%, var(--secondary-color) 100%); /* Gradient */
+    position: relative; /* Positioning context */
+    margin-top: var(--nav-height); /* Space for fixed nav */
+}
+
+/* Hero content container */
+.hero-content {
+    flex: 1; /* Take available space */
+    max-width: 600px; /* Maximum width */
+    z-index: 2; /* Above heart */
+}
+
+/* Hero heading */
+/* Text Styles - Refined for better readability */
+.hero h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    color: var(--primary-red);
+    margin-bottom: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+}
+
+/* Hero tagline */
+.tagline {
+    font-size: 1.4rem;
+    color: var(--dark-color);
+    margin-bottom: 2.5rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+/* Section text refinement */
+.section-container h2 {
+    font-size: 2.5rem;
+    color: var(--primary-red);
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+}
+
+.section-container h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--primary-light);
+}
+
+/* Heart Animation Section - Enhanced with concentric circles */
+.heart-animation {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Outer glow circle (largest) */
+.heart-outer-glow {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(142,22,22,0.15) 0%, rgba(142,22,22,0) 70%);
+    animation: pulse 4s ease-in-out infinite alternate;
+}
+
+/* Middle ring */
+.heart-middle-ring {
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    border: 2px solid rgba(210, 102, 90, 0.3);
+    animation: rotate 30s linear infinite reverse;
+}
+
+/* Inner platform (closest to heart) */
+.heart-platform {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(142,22,22,0.3) 0%, rgba(245,94,94,0.1) 70%);
+    box-shadow: 0 0 30px rgba(142,22,22,0.2);
+}
+
+/* Heart image */
+.biological-heart {
+    width: 320px; /* Slightly smaller to fit within circles */
+    height: 320px;
+    object-fit: contain;
+    animation: float 6s ease-in-out infinite, rotate 20s linear infinite;
+    z-index: 3; /* Above all circles */
+    position: relative;
+    filter: drop-shadow(0 0 10px rgba(142,22,22,0.4));
+}
+
+/* New pulse animation for outer glow */
+@keyframes pulse {
+    0% { transform: scale(0.95); opacity: 0.7; }
+    100% { transform: scale(1.05); opacity: 0.9; }
+}
+
+/* Floating animation */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg); /* Start/end position */
+    }
+    50% {
+        transform: translateY(-20px) rotate(2deg); /* Mid animation */
+    }
+}
+
+/* Rotation animation */
+@keyframes rotate {
+    from {
+        transform: rotate(0deg); /* Start rotation */
+    }
+    to {
+        transform: rotate(360deg); /* Full rotation */
+    }
+}
+
+/* Info Section */
+.info-section {
+    background-color: #FFEADD; /* Cream background */
+    position: relative; /* Positioning context */
+}
+
+/* Diagonal cut effect at top */
+.info-section::before {
+    content: ''; /* Required for pseudo-element */
+    position: absolute; /* Absolute positioning */
+    top: -50px; /* Position above section */
+    left: 0; /* Align left */
+    width: 100%; /* Full width */
+    height: 50px; /* Height */
+    background: linear-gradient(to bottom right, transparent 49.5%, #FFEADD 50%); /* Diagonal gradient */
+}
+
+/* Info section heading */
+.info-section h2 {
+    font-size: 2.5rem; /* Size */
+    margin-bottom: 2rem; /* Space below */
+    color: var(--primary-red); /* Red color */
+}
+
+/* Info section paragraph */
+.info-section p {
+    max-width: 800px; /* Maximum width */
+    margin: 0 auto 3rem; /* Center with space below */
+    font-size: 1.1rem; /* Size */
+    color: var(--gray-color); /* Gray text */
+}
+
+/* Risk Carousel */
+.risk-carousel {
+    display: flex; /* Flex layout */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    margin: 40px 0; /* Vertical margin */
+    position: relative; /* Positioning context */
+}
+
+/* Carousel navigation buttons */
+.carousel-button {
+    background-color: var(--primary-red); /* Red background */
+    color: #FFEADD; /* Cream text */
+    border: none; /* No border */
+    border-radius: 50%; /* Circular */
+    width: 40px; /* Size */
+    height: 40px; /* Size */
+    font-size: 1.2rem; /* Icon size */
+    cursor: pointer; /* Pointer cursor */
+    transition: all 0.3s ease; /* Smooth transitions */
+    display: flex; /* Flex layout */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    margin: 0 15px; /* Horizontal margin */
+    z-index: 2; /* Above cards */
+}
+
+/* Button hover effect */
+.carousel-button:hover {
+    background-color: var(--primary-dark); /* Darker red */
+    transform: scale(1.1); /* Slightly larger */
+}
+
+/* Cards container */
+.risk-cards-container {
+    width: 100%; /* Full width */
+    overflow: hidden; /* Hide overflow */
+    position: relative; /* Positioning context */
+}
+
+/* Cards wrapper */
+.risk-cards {
+    display: flex; /* Flex layout */
+    transition: transform 0.5s ease; /* Smooth slide */
+    width: 100%; /* Full width */
+    padding: 20px 0; /* Vertical padding */
+}
+
+/* Risk Cards - Enhanced styling */
+.risk-card {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 30px 25px;
+    min-width: 250px;
+    margin: 0 15px;
+    box-shadow: 0 8px 25px rgba(142,22,22,0.1);
+    transition: all 0.4s ease;
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(255,234,221,0.3);
+}
+
+.risk-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 12px 30px rgba(142,22,22,0.15);
+}
+
+
+/* Risk level indicator */
+.risk-level {
+    width: 60px; /* Size */
+    height: 60px; /* Size */
+    border-radius: 50%; /* Circular */
+    display: flex; /* Flex layout */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    font-size: 1.5rem; /* Size */
+    font-weight: bold; /* Bold text */
+    color: #FFEADD; /* Cream text */
+    margin: 0 auto 20px; /* Center with space below */
+}
+
+/* Different risk level colors */
+.level-0 { background-color: #b52a2a; } /* Level 0 color */
+.level-1 { background-color: #951919; } /* Level 1 color */
+.level-2 { background-color: #750c0c; } /* Level 2 color */
+.level-3 { background-color: #580404; } /* Level 3 color */
+.level-4 { background-color: #3B0000; } /* Level 4 color */
+
+/* How It Works Section */
+.how-it-works {
+    background-color: var(--secondary-color); /* Cream background */
+    position: relative; /* Positioning context */
+}
+
+/* Diagonal cut effect at top */
+.how-it-works::before {
+    content: ''; /* Required for pseudo-element */
+    position: absolute; /* Absolute positioning */
+    top: -50px; /* Position above section */
+    left: 0; /* Align left */
+    width: 100%; /* Full width */
+    height: 50px; /* Height */
+    background: linear-gradient(to bottom right, transparent 49.5%, var(--secondary-color) 50%); /* Diagonal gradient */
+}
+
+/* Section heading */
+.how-it-works h2 {
+    font-size: 2.5rem; /* Size */
+    margin-bottom: 2rem; /* Space below */
+    color: var(--primary-red); /* Red color */
+}
+
+/* Features grid container */
+.features-grid {
+    display: flex; /* Flex layout */
+    justify-content: center; /* Center horizontally */
+    flex-wrap: wrap; /* Wrap items */
+    gap: 30px; /* Space between items */
+    margin: 50px 0; /* Vertical margin */
+}
+
+/* Individual feature cards */
+/* Feature Cards - Enhanced interaction */
+.feature {
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    padding: 40px 30px;
+    width: 300px;
+    box-shadow: 0 8px 25px rgba(142,22,22,0.1);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    backdrop-filter: blur(5px);
+}
+
+.feature:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 15px 35px rgba(142,22,22,0.15);
+}
+
+/* Feature icon */
+.feature i {
+    font-size: 3rem; /* Large size */
+    color: var(--primary-red); /* Red color */
+    margin-bottom: 20px; /* Space below */
+}
+
+/* Technical details box */
+/* Technical Details - Softer look */
+.technical-details {
+    max-width: 800px;
+    margin: 50px auto;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.85);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(142,22,22,0.08);
+    border: 1px solid rgba(255,234,221,0.5);
+}
+
+/* Technical details list */
+.technical-details ul {
+    columns: 2; /* Two columns */
+    list-style-position: inside; /* Bullets inside */
+    margin: 20px 0; /* Vertical margin */
+}
+
+/* Footer - Fixed version */
+footer {
+    background-color: var(--primary-dark); /* Dark red background */
+    color: var(--secondary-color); /* Cream text */
+    padding: 40px 0 20px; /* Padding */
+    text-align: center; /* Center text */
+    position: relative;
+    width: 100%;
+}
+
+/* Remove the diagonal cut effect from footer */
+footer::before {
+    content: none; /* Remove the pseudo-element */
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Social links container */
+.social-links {
+    margin-bottom: 20px; /* Space below */
+}
+
+.social-links {
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    color: var(--secondary-color);
+    font-size: 1.5rem;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: var(--primary-light);
+}
+
+.footer-content p {
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+}
+
+.disclaimer {
+    font-size: 0.8rem;
+    opacity: 0.8;
+    margin-top: 20px;
+    color: rgba(255, 234, 221, 0.8);
+}
+
+/* Remove any duplicate nav styles that might be appearing in footer */
+footer .nav-links,
+footer .nav-container,
+footer .logo {
+    display: none !important;
+}
+/* Scrolling Effects */
+/* Minimized heart when scrolled */
+/* Scrolling Effects - Adjusted positioning */
+.scrolled .biological-heart {
+    width: 70px;
+    height: 70px;
+    position: fixed;
+    top: 25px; /* More spacing from top */
+    right: 25px; /* More spacing from right */
+    z-index: 1001;
+}
+
+.scrolled .heart-platform {
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+}
+
+.scrolled .heart-outer-glow,
+.scrolled .heart-middle-ring {
+    display: none; /* Hide circles when minimized */
+}
+
+/* Minimized platform when scrolled */
+.scrolled .heart-platform {
+    width: 120px; /* Small size */
+    height: 120px; /* Small size */
+    position: fixed; /* Fixed position */
+    top: -10px; /* Slightly above */
+    right: -10px; /* Slightly right */
+    z-index: 1000; /* Below heart */
+}
+
+/* Mobile Menu Styles */
+.mobile-menu {
+    display: none; /* Hidden by default */
+    position: absolute;
+    top: var(--nav-height);
+    left: 0;
+    width: 100%;
+    background-color: rgba(245, 94, 94, 0.95);
+    padding: 20px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    z-index: 1000;
+}
+
+.mobile-menu.active {
+    display: block;
+}
+
+.mobile-menu ul {
+    list-style: none;
+}
+
+.mobile-menu li {
+    margin-bottom: 15px;
+}
+
+.mobile-menu a {
+    color: var(--secondary-color);
+    font-weight: 500;
+    display: block;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+.mobile-menu a:hover {
+    color: white;
+    transform: translateX(5px);
+}
+
+.mobile-menu .nav-button {
+    background-color: var(--primary-dark);
+    color: var(--secondary-color) !important;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+/* Show hamburger only on mobile */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none !important;
+    }
+    .mobile-menu {
+        display: none !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+    .nav-links {
+        display: none;
+    }
+}

@@ -1,0 +1,179 @@
+/* Results Page Styles */
+@import url('style.css');
+
+.result-container {
+    max-width: 1000px;
+    margin: 80px auto;
+    padding: 40px;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(142, 22, 22, 0.1);
+}
+
+.result-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.result-header h1 {
+    color: var(--primary-red);
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.result-card {
+    display: flex;
+    align-items: center;
+    padding: 40px;
+    border-radius: 12px;
+    margin-bottom: 40px;
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.result-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 100%;
+    background-color: var(--primary-red);
+}
+
+.result-icon {
+    flex: 0 0 150px;
+    text-align: center;
+    margin-right: 40px;
+}
+
+.result-icon i {
+    font-size: 6rem;
+    color: var(--primary-red);
+    transition: all 0.4s ease;
+}
+
+.result-content {
+    flex: 1;
+}
+
+.result-card.high-risk {
+    background-color: rgba(142, 22, 22, 0.1);
+}
+
+.result-card.medium-risk {
+    background-color: rgba(210, 102, 90, 0.1);
+}
+
+.result-card.low-risk {
+    background-color: rgba(106, 13, 13, 0.1);
+}
+
+.result-card h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--primary-red);
+}
+
+.probability {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.interpretation {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.feature-importance {
+    background: rgba(255, 255, 255, 0.7);
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.feature-importance h3 {
+    color: var(--primary-red);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.feature-importance ol {
+    padding-left: 20px;
+}
+
+.feature-importance li {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+}
+
+.recommendations {
+    padding: 30px;
+    background: rgba(255, 234, 221, 0.5);
+    border-radius: 12px;
+    margin-bottom: 30px;
+}
+
+.recommendations h3 {
+    color: var(--primary-red);
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+}
+
+.recommendations p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.back-button {
+    display: inline-block;
+    background-color: var(--primary-red);
+    color: white;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.back-button:hover {
+    background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 0, 0, 0.4);
+}
+
+.error-message {
+    color: var(--primary-red);
+    font-size: 1.2rem;
+    text-align: center;
+    margin: 30px 0;
+    padding: 20px;
+    background: rgba(142, 22, 22, 0.1);
+    border-radius: 8px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .result-card {
+        flex-direction: column;
+        padding: 30px 20px;
+    }
+
+    .result-icon {
+        margin-right: 0;
+        margin-bottom: 30px;
+    }
+
+    .result-container {
+        margin: 40px 20px;
+        padding: 30px 20px;
+    }
+}
