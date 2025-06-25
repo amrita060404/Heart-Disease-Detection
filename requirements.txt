@@ -1,0 +1,45 @@
+# Core requirements
+Flask==2.3.2
+Werkzeug==2.3.7
+Jinja2==3.1.2
+itsdangerous==2.1.2
+click==8.1.3
+
+# Data processing & machine learning
+numpy==1.24.4
+pandas==2.0.3
+scikit-learn==1.3.0
+joblib==1.3.2
+
+# Development tools (optional)
+python-dotenv==1.0.0  # For environment variables
+gunicorn==20.1.0      # For production deployment
+
+# Font Awesome (for icons)
+fontawesome-free==6.4.0
+
+#Important Notes:
+##Key Dependencies:
+Flask for the web framework
+scikit-learn for your machine learning model
+joblib for loading your pickle files
+numpy and pandas for data processing
+
+#Version Pinning:
+I've pinned versions that are known to work well together
+This ensures consistency across different environments
+
+#Google Colab:
+If you used Google Colab for model development, you don't need to include Colab-specific dependencies here since this is for deployment
+
+#Spyder:
+Spyder is an IDE and doesn't need to be included in requirements
+
+#Additional Recommendations:
+Create a virtual environment before installing these packages
+Install with: pip install -r requirements.txt (anaconda suggested me to use conda propmt as -pip would break the dependencies so I did that)
+
+#How to Use This File:
+Create a new file named requirements.txt in your project root directory
+Copy the content above into it
+Commit it to your GitHub repository along with your other files
