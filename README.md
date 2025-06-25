@@ -1,6 +1,6 @@
 # ❤️ Heart Disease Risk Assessment Web App
 
-!(static/images/screenshot.png)  
+![App Screenshot](static/images/screenshot.png)  
 *A machine learning-powered web application to assess your risk of heart disease*
 
 ## 🚀 Overview
@@ -53,25 +53,25 @@ This project combines medical research with machine learning to create an access
 - **Validation**: 5-fold cross validation
 
 ## 🏗️ Project Structure
-heart-disease-app/
-├── static/
-│ ├── css/
-│ │ ├── style.css
-│ │ ├── assessment.css
-│ │ └── result.css
-│ ├── js/
-│ │ └── heart-animation.js
-│ └── images/
-├── templates/
-│ ├── index.html
-│ ├── assessment.html
-│ └── result.html
-├── models/
-│ ├── heart_disease_model.pkl
-│ ├── heart_disease_scaler.pkl
-│ └── feature_names.pkl
-├── app.py
-└── requirements.txt
+heart-disease-app/ <br>
+├── static/ <br>
+│ ├── css/ <br>
+│ │ ├── style.css <br>
+│ │ ├── assessment.css <br>
+│ │ └── result.css <br>
+│ ├── js/ <br>
+│ │ └── heart-animation.js <br>
+│ └── images/ <br>
+├── templates/ <br>
+│ ├── index.html <br>
+│ ├── assessment.html <br>
+│ └── result.html <br>
+├── models/ <br>
+│ ├── heart_disease_model.pkl <br>
+│ ├── heart_disease_scaler.pkl <br>
+│ └── feature_names.pkl <br>
+├── app.py <br>
+└── requirements.txt<br>
 
 
 ## 🚦 Getting Started
@@ -112,8 +112,6 @@ Through developing this project, I:
 -❗ This tool provides risk prediction only and is not a substitute for professional medical advice. Always consult with a healthcare provider for medical decisions.
 
 Developed with ❤️ by Amrita Yadav
-https://img.shields.io/badge/-GitHub-181717?logo=github
-https://img.shields.io/badge/-LinkedIn-0077B5?logo=linkedin
 
 
 
